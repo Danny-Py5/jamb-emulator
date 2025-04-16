@@ -9,6 +9,7 @@
 }
 body {
     background-color: aliceblue;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
 h1,
 p {
