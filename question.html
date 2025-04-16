@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JAMB Emulator | questions</title>
+        <link rel="stylesheet" href="questions.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__wrapper">
+                <h2 class="header__h2">SUEDEB JAMB EUMULATOR</h2>
+                <div class="header__button-container">
+                    <button
+                        class="header__button header__button-submit submit submit-button"
+                        >Submit</button
+                    >
+                    <button class="header__button-reset">Reset</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <article>
+                <h1>JAMB Emulator questions Boomb</h1>
+                <div class="js-question-cont"> </div>
+                <div class="nav-buttons">
+                    <button class="prev" id="prev">Prev</button>
+                    <button class="next" id="next">Next</button>
+                </div>
+                <div class="question-track-container"> </div>
+
+                <dialog class="submit-dialog" id="submitDialog">
+                    <p>Are you sure you want to submit the <b>exam?</b></p>
+
+                    <div class="dialog-button-cont"
+                        ><button
+                            class="close-modal"
+                            onclick="document.querySelector('.submit-dialog').close()"
+                            ><span class="no-wrap">NO, Cancel</span></button
+                        >
+                        <button id="yesSubmitQuestions">Proceed</button>
+                    </div>
+                </dialog>
+
+                <dialog class="reset-dialog" id="resetDialog">
+                    <p>Are you sure you want to reset the questions?</p>
+
+                    <div class="dialog-button-cont"
+                        ><button
+                            id="close-modal"
+                            class="close-modal"
+                            onclick="document.querySelector('.reset-dialog').close()"
+                            >NO</button
+                        >
+                        <button id="yesResetQuestions">Yes</button>
+                    </div>
+                </dialog>
+
+                <dialog class="result-dialog" id="resultDialog">
+                    <p>
+                        You got <b><span class="js-got">0</span></b> questions
+                    </p>
+                    <p>
+                        You lost <b><span class="js-lost">0</span></b> questions
+                    </p>
+                    <p>
+                        You did not attempt
+                        <b><span class="js-unattempt">0</span></b> questions
+                    </p>
+                    <div class="dialog-button-cont">
+                        <button class="close-modal js-understood-and-restart"
+                            >Understood!
+                        </button>
+                    </div>
+                </dialog>
+            </article>
+            <div class="status">Questions reset!</div>
+        </main>
+
+        <script type="module" src="question.js"></script>
+    </body>
+</html>

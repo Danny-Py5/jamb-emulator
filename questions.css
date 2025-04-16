@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --padding: 1rem;
+    --primary-color: #398fff80;
+}
+body {
+    background-color: aliceblue;
+}
+h1,
+p {
+    margin-bottom: var(--padding);
+}
+h1 {
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    margin-bottom: 60px;
+    /* cursor: not-allowed; */
+}
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    font: inherit;
+    /* font-weight: 600; */
+    transition: 0.5s;
+}
+
+/* \\\\\\\\\\\\\\\\ utility  */
+.no-wrap {
+    white-space: nowrap;
+}
+/* \\\\\\\\\\\\\\\\ utility  ends */
+
+/* ||||||||||||||||||||||||| header */
+.header {
+    /* top: 0;
+    position: fixed;
+    right: 0;
+    left: 0; */
+    background-color: rgb(1, 17, 35);
+}
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem var(--padding);
+    align-items: center;
+    max-width: 900px;
+    color: white;
+    margin: auto;
+}
+.header__h2 {
+    font-size: 16px;
+}
+.header__button-container {
+    display: flex;
+    gap: 0.5rem;
+    width: fit-content;
+}
+.header__button {
+    background-color: rgb(9, 210, 9);
+    color: inherit;
+    padding: 0.5rem 1rem;
+}
+.header__button-reset {
+    background-color: #00000000;
+    border: 2px solid red;
+    color: white;
+    padding: 0.5rem 0.45rem;
+}
+.header__button:hover {
+    opacity: 0.9;
+}
+.header__button-reset:hover {
+    border-radius: 1rem;
+}
+
+label {
+    margin-bottom: 12px;
+    display: inline-block;
+}
+article {
+    padding: var(--padding);
+    max-width: 900px;
+    margin: 40px auto auto;
+}
+.options {
+    padding: 0.5rem;
+}
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+#prev,
+#next {
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    font: inherit;
+}
+#prev:hover,
+#next:hover {
+    background-color: #398fffc8;
+}
+dialog {
+    text-align: center;
+    padding: 1rem;
+    display: none;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    border-radius: 0.8rem;
+    margin: auto;
+    max-width: 350px;
+    font-size: 16px;
+}
+dialog[open] {
+    display: flex;
+}
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.598);
+}
+
+.dialog-button-cont {
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.dialog-button-cont button:hover {
+    background-color: #398fffc8;
+}
+
+.result-dialog {
+    align-items: flex-start;
+    text-align: left;
+}
+.result-dialog p {
+    margin-bottom: 5px;
+}
+
+/* ||||||||||||||||||| status bar */
+.status {
+    background-color: rgb(7, 144, 14);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    /* animation: slideIn 1s ease; */
+    display: none;
+}
+.slideIn {
+    display: block;
+    animation: slideIn 1s cubic-bezier(1, 0.18, 0.8, 0);
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(40px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

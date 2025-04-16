@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SVG | Practice</title>
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            :root {
+                --margin-right: 20px;
+            }
+            body {
+                animation: changeColor 120s infinite;
+            }
+            @keyframes changeColor {
+                0%,
+                50% {
+                    background-color: aliceblue;
+                }
+                10%,
+                30% {
+                    background-color: antiquewhite;
+                }
+                20%,
+                60% {
+                    background-color: azure;
+                }
+                70%,
+                90% {
+                    background-color: rgb(246, 218, 222);
+                }
+                80%,
+                100% {
+                    background-color: rgb(201, 218, 224);
+                }
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 50px;
+            }
+            .detail {
+                display: flex;
+                background-color: white;
+                flex-direction: column;
+                max-width: 350px;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                gap: 1.5rem;
+                margin: 10% auto;
+                /* margin-right: var(--margin-right); 
+                /* animation: changeColor 30s infinite 3s; */
+            }
+            input:focus {
+                outline: none;
+                border: 2px solid green;
+            }
+            input,
+            button {
+                font: inherit;
+                border: 2px solid grey;
+                padding: 0.8rem;
+                border-radius: 0.5rem;
+                transition: all 0.5s;
+            }
+            button {
+                background-color: green;
+                color: white;
+                font-weight: 700;
+                border: none;
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+            button:hover {
+                opacity: 0.9;
+            }
+
+            .login-preloader {
+                width: 20px;
+                height: 20px;
+                border: 3px solid white;
+                border-top-color: transparent;
+                border-radius: 10px;
+                animation: roll 0.7s infinite linear;
+                display: none;
+            }
+            .login-preloader.activate {
+                display: block;
+            }
+            @keyframes roll {
+                from {
+                    rotate: 0deg;
+                }
+                to {
+                    rotate: 360deg;
+                }
+            }
+            dialog {
+                text-align: center;
+                padding: 2rem;
+                display: none;
+                justify-content: center;
+                gap: 1rem;
+                align-items: center;
+                flex-direction: column;
+                border: none;
+                border-radius: 0.8rem;
+                margin: auto;
+            }
+            dialog[open] {
+                display: flex;
+            }
+            dialog::backdrop {
+                background-color: rgba(0, 0, 0, 0.598);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+        <div class="detail">
+            <input type="text" placeholder="Reg. Number" />
+            <button type="submit"
+                ><div class="login-preloader"></div>Login</button
+            >
+        </div>
+        <dialog id="myModal">
+            <p>Please input at least 11 characters</p>
+            <button
+                id="close-modal"
+                class="close-modal"
+                onclick="document.querySelector('dialog').close()"
+                >Okay</button
+            >
+        </dialog>
+
+        <script>
+            document.querySelector("button").addEventListener("click", () => {
+                const input = document.querySelector("input");
+                if (input.value.length >= 11) {
+                    const preload = document.querySelector(".login-preloader");
+                    preload.classList.add("activate");
+                    setTimeout(() => {
+                        preload.classList.remove("activate");
+                        window.location.href = "question.html";
+                    }, 4000);
+                } else {
+                    document.querySelector("dialog").showModal();
+                }
+            });
+        </script>
+    </body>
+</html>
